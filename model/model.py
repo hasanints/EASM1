@@ -84,9 +84,9 @@ class MRCNN(nn.Module):
             nn.MaxPool1d(kernel_size=8, stride=2, padding=4),
             nn.Dropout(drate),
 
-            nn.Conv1d(128, 128, kernel_size=8, stride=1, bias=False, padding=4),
-            nn.BatchNorm1d(128),
-            self.GELU,
+            # nn.Conv1d(128, 128, kernel_size=8, stride=1, bias=False, padding=4),
+            # nn.BatchNorm1d(128),
+            # self.GELU,
 
             nn.Conv1d(128, 128, kernel_size=8, stride=1, bias=False, padding=4),
             nn.BatchNorm1d(128),
@@ -102,9 +102,9 @@ class MRCNN(nn.Module):
             nn.MaxPool1d(kernel_size=8, stride=2, padding=4),
             nn.Dropout(drate),
 
-            nn.Conv1d(128, 128, kernel_size=7, stride=1, bias=False, padding=3),
-            nn.BatchNorm1d(128),
-            self.GELU,
+            # nn.Conv1d(128, 128, kernel_size=7, stride=1, bias=False, padding=3),
+            # nn.BatchNorm1d(128),
+            # self.GELU,
 
             nn.Conv1d(128, 128, kernel_size=7, stride=1, bias=False, padding=3),
             nn.BatchNorm1d(128),
@@ -305,7 +305,7 @@ class AttnSleep(nn.Module):
     def __init__(self):
         super(AttnSleep, self).__init__()
 
-        N = 2  # number of TCE clones
+        N = 1  # number of TCE clones, original = 2
         d_model = 80  # set to be 100 for SHHS dataset
         d_ff = 120   # dimension of feed forward
         h = 5  # number of attention heads
